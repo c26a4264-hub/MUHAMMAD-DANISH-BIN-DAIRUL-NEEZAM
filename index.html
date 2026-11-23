@@ -111,11 +111,46 @@ section p {
     border: 3px solid #c7ff5e;
     margin-bottom: 25px;
 }
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    color: #c7ff5e;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+.nav-links a:hover {
+    color: #c7ff5e;
+}
 </style>
 
 </head>
     
 <body>
+    <nav class="navbar">
+    <div class="logo">DANISH.</div>
+
+    <div class="nav-links">
+        <a href="#">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+</nav>
 <img src="IMG_5577.jpeg" alt="Danish Profile" class="profile-img">
     <h1>HELLO, I'M DANISH</h1>
     <p>Welcome to my personal portfolio website.</p>
