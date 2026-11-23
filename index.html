@@ -375,5 +375,29 @@ footer p {
     <p>Designed by Danish | Creative Technology</p>
         <p><a href="#" class="back-to-top">BACK TO TOP ↑</a></p>
 </footer>
+    <div id="scroll-progress"></div>
+
+<style>
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: #c7ff5e;
+    box-shadow: 0 0 10px #c7ff5e;
+    z-index: 9999;
+}
+</style>
+
+<script>
+window.addEventListener("scroll", function() {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("scroll-progress").style.width = progress + "%";
+});
+</script>
 </body>
 </html>
