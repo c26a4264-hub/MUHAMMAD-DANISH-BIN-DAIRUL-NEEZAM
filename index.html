@@ -161,6 +161,35 @@ section p {
         transform: translateY(0);
     }
 }
+    @media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .buttons a {
+        margin: 6px;
+    }
+
+    section {
+        padding: 25px 15px;
+    }
+}
 </style>
 
 </head>
