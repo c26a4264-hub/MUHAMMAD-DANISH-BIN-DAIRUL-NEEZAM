@@ -284,6 +284,22 @@ footer p {
     margin-bottom: 25px;
     opacity: 0.8;
 }
+    .datetime {
+    margin: 25px 0;
+    color: #c7ff5e;
+    letter-spacing: 2px;
+}
+
+#date {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+#time {
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #c7ff5e;
+}
 </style>
 
 </head>
@@ -305,7 +321,10 @@ footer p {
     <p class="intro">
     Creative Technology Student | Photographer | Digital Creator
 </p>
-
+<div class="datetime">
+    <div id="date"></div>
+    <div id="time"></div>
+</div>
 <div class="buttons">
     <a href="#about">ABOUT ME</a>
     <a href="#projects">MY PROJECTS</a>
@@ -411,6 +430,29 @@ window.addEventListener("scroll", function() {
 
     document.getElementById("scroll-progress").style.width = progress + "%";
 });
+</script>
+    <script>
+function updateDateTime() {
+    const now = new Date();
+
+    document.getElementById("date").textContent =
+        new Intl.DateTimeFormat(undefined, {
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        }).format(now);
+
+    document.getElementById("time").textContent =
+        new Intl.DateTimeFormat(undefined, {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
+        }).format(now);
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
 </script>
 </body>
 </html>
