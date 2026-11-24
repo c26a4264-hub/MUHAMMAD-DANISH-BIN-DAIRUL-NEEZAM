@@ -392,7 +392,7 @@ footer p {
 </div>
 </nav>
     <p class="welcome-text">WELCOME TO MY PORTFOLIO</p>
-<img src="IMG_5577.jpeg" alt="Danish Profile" class="profile-img">
+<img src="IMG_5577.jpeg" alt="Danish Profile" class="profile-img" id="profileLightbox">
     <h1>HELLO, I'M DANISH</h1>
     <p class="intro">
     Creative Technology Student | Photographer | Digital Creator
@@ -678,6 +678,52 @@ document.querySelectorAll(".project-card").forEach((card) => {
         return () => {
             animate(card, { scale: 1 }, { duration: 0.2 });
         };
+    });
+});
+</script>
+<script>
+const profile = document.getElementById("profileLightbox");
+
+profile.style.cursor = "zoom-in";
+
+profile.addEventListener("click", function() {
+    const overlay = document.createElement("div");
+
+    overlay.style.cssText = `
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.95);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999;
+        padding: 20px;
+        cursor: zoom-out;
+    `;
+
+    const largeImage = document.createElement("img");
+    largeImage.src = profile.src;
+
+    largeImage.style.cssText = `
+        max-width: 90%;
+        max-height: 85%;
+        object-fit: contain;
+        border-radius: 15px;
+        box-shadow: 0 0 25px #c7ff5e;
+    `;
+
+    overlay.appendChild(largeImage);
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener("click", function() {
+        overlay.remove();
+    });
+
+    document.addEventListener("keydown", function closeImage(e) {
+        if (e.key === "Escape") {
+            overlay.remove();
+            document.removeEventListener("keydown", closeImage);
+        }
     });
 });
 </script>
