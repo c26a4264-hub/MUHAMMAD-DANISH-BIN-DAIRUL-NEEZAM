@@ -669,22 +669,14 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 </script>
 <script type="module">
-import { animate, hover } from "https://cdn.jsdelivr.net/npm/motion@12.23.24/+esm";
+import { animate, press } from "https://cdn.jsdelivr.net/npm/motion@12.23.24/+esm";
 
 document.querySelectorAll(".project-card").forEach((card) => {
-    hover(card, () => {
-        animate(card, {
-            scale: 1.05
-        }, {
-            duration: 0.25
-        });
+    press(card, () => {
+        animate(card, { scale: 1.05 }, { duration: 0.2 });
 
         return () => {
-            animate(card, {
-                scale: 1
-            }, {
-                duration: 0.25
-            });
+            animate(card, { scale: 1 }, { duration: 0.2 });
         };
     });
 });
