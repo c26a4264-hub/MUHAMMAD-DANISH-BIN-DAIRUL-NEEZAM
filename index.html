@@ -624,5 +624,19 @@ gsap.from("#about h2, #about p", {
     }
 });
 </script>
+<script>
+gsap.from("#contact h2, #contact p, #contact a", {
+    y: 30,
+    opacity: 0,
+    duration: 1.2,
+    stagger: 0.2,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#contact",
+        start: "top 80%",
+        once: true
+    }
+});
+</script>
 </body>
 </html>
