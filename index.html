@@ -610,5 +610,19 @@ gsap.from(".navbar", {
     delay: 0.8
 });
 </script>
+<script>
+gsap.from("#about h2, #about p", {
+    y: 30,
+    opacity: 0,
+    duration: 1.2,
+    stagger: 0.3,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#about",
+        start: "top 80%",
+        once: true
+    }
+});
+</script>
 </body>
 </html>
