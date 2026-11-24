@@ -601,5 +601,14 @@ gsap.utils.toArray(".project-card").forEach((card) => {
     );
 });
 </script>
+<script>
+gsap.from(".navbar", {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    delay: 0.5
+});
+</script>
 </body>
 </html>
