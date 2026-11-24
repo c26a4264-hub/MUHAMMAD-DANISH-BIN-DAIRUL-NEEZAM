@@ -572,6 +572,15 @@ gsap.from(".gsap-word", {
    
 </script> 
 <script>
+gsap.from(".profile-img", {
+    scale: 0.7,
+    opacity: 0,
+    duration: 1.2,
+    ease: "back.out(1.7)",
+    delay: 1
+});
+</script>
+<script>
 gsap.utils.toArray(".project-card").forEach((card) => {
     gsap.fromTo(card,
         {
