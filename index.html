@@ -475,7 +475,13 @@ footer p {
 
     <a href="mailto:c26a4264@siswa.umk.edu.my" class="contact-link">
         SEND ME AN EMAIL
-    </a><a href="https://www.instagram.com/nynish._/" target="_blank" rel="noopener noreferrer" class="contact-link">
+    </a>
+
+<button class="contact-link" onclick="copyEmail()">
+    COPY EMAIL
+</button>
+
+<a href="https://www.instagram.com/nynish._/" target="_blank" rel="noopener noreferrer" class="contact-link">
     <span>◎</span> INSTAGRAM
 </a>
 </section>
@@ -726,6 +732,17 @@ profile.addEventListener("click", function() {
         }
     });
 });
+</script>
+<script>
+function copyEmail() {
+    navigator.clipboard.writeText("c26a4264@siswa.umk.edu.my")
+        .then(() => {
+            alert("Email copied successfully!");
+        })
+        .catch(() => {
+            alert("Unable to copy email.");
+        });
+}
 </script>
 </body>
 </html>
