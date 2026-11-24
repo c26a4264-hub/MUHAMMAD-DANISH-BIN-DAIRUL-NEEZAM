@@ -571,5 +571,19 @@ gsap.from(".gsap-word", {
 });
 </script>
 </script>
+   <script>
+gsap.from(".project-card", {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#projects",
+        start: "top 75%",
+        once: true
+    }
+});
+</script> 
 </body>
 </html>
