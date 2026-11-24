@@ -370,7 +370,8 @@ footer p {
     }
 }
 </style>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.2/ScrollTrigger.min.js"></script>
 </head>
     
 <body>
@@ -540,6 +541,35 @@ window.addEventListener("load", function() {
         }, 500);
 
     }, 1000);
+});
+</script>
+    <script>
+gsap.registerPlugin(ScrollTrigger);
+</script>
+    <script>
+const title = document.querySelector("h1");
+
+const words = title.textContent.trim().split(/\s+/);
+
+title.innerHTML = words.map(word =>
+    `<span class="gsap-word">${word}</span>`
+).join(" ");
+
+gsap.set(".gsap-word", {
+    display: "inline-block"
+});
+
+gsap.from(".gsap-word", {
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: title,
+        start: "top 80%",
+        once: true
+    }
 });
 </script>
 </body>
